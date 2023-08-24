@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chat app</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+      integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/css/chat.css" />
+  </head>
+  <body>
+    <main class="row app">
+      <!-- Phần danh sách user -->
+      <section class="col-md-3 col-sm-4 app__left">
+        <h1 class="text-center">
+          <span class="app__title" id="app__title">CyberChat</span>
+        </h1>
+        <div class="app__title--line"></div>
+        <div class="app__list-user">
+          <ul class="app__list-user--content" id="app__list-user--content">
+            <li class="app__item-user">Admin User</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="col-md-9 col-sm-8 app__right">
+        <!-- Phần khung tin nhắn -->
+        <div class="app__messages" id="app__messages">
+          <!-- <div class="message-item">
+            <div class="message__row1">
+              <p class="message__name">Nguyễn Phong Hào</p>
+              <p class="message__date">11/02/2021 - 12:56:01</p>
+            </div>
+            <div class="message__row2">
+              <p class="message__content">
+                hôm nay tui được đi đá banh , mừng qua các bạn ơi
+              </p>
+            </div>
+          </div> -->
+
+          <!-- <div class="message-item">
+            <div class="notice__row">
+              <p class="message__notice">----- Chào mừng user -----</p>
+            </div>
+          </div> -->
+        </div>
+
+        <!-- Phần form -->
+        <div class="app__send-messages">
+          <form id="form-messages" class="form-messages">
+            <!-- <input type="text" id="input-messages" />
+            <button type="submit">Gửi</button>
+            <button type="button" id="btn-share-location">Gửi Vị Trí</button> -->
+
+            <div class="input-group h-100 pb-4">
+              <div class="input-messages__wrapper">
+                <input type="text" id="input-messages" class="input-messages" />
+              </div>
+              <div class="input-group-append">
+                <button
+                  class="btn btn-outline-secondary btn-send"
+                  type="submit"
+                >
+                  Gửi
+                </button>
+                <button
+                  class="btn btn-outline-secondary btn-location"
+                  id="btn-share-location"
+                  type="button"
+                >
+                  Gửi Vị Trí
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- thư viện để lấy params url -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.9.6/qs.min.js"
+      integrity="sha512-3TmPrquYLaAsUmZKXRARTDC5siWhLAdBVqNo4dWpDABBtLU62AaoTaQJEvjxjExcZYurO6i1dnK85k8pPIBlRg=="
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- nhúng code như trang chủ hướng dẫn -->
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="./js/client_chat.js"></script>
+  </body>
+</html>
